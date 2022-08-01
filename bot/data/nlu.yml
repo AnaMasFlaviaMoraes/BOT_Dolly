@@ -1,0 +1,1279 @@
+version: "3.1"
+
+nlu:
+##################### Comum a todos ###################################
+
+- intent: greet
+  examples: |
+    - Ei
+    - eai
+    - eai meu
+    - eai gente
+    - EAI MEU
+    - EAI GENTE
+    - EAI
+    - OI
+    - OLA
+    - Ola
+    - OLÁ
+    - BOM DIA
+    - BOA TARDE
+    - BOA NOITE
+    - EI
+    - Olá 
+    - Oi 
+    - Olá 
+    - Bom dia 
+    - Boa noite 
+    - Ei 
+    - Hey Cara 
+    - Bom dia 
+    - Boa noite 
+    - Boa tarde
+    - oi, tudo bem?
+    - oi, td bem?
+    - Olá, tudo bem com vocês?
+- intent: goodbye
+  examples: |
+    - vejo você mais tarde
+    - boa noite
+    - bom dia
+    - boa tarde
+    - BOA NOITE
+    - BOA TARDE
+    - BOM DIA
+    - TCHAU
+    - Tchau
+    - ADEUS
+    - Adeus
+    - ATÉ MAIS
+    - Até mais
+    - tchau
+    - adeus
+    - tenha um bom dia
+    - TENHA UM BOM DIA
+    - TENHA UMA BOA NOITE
+    - até mais
+    - até mais tchau
+    - ATÉ MAIS TCHAU
+    - até mais adeus
+    - Vejo você por aí
+    - tchau tchau
+    - até logo
+- intent: affirm
+  examples: |
+    - sim
+    - s
+    - na verdade
+    - é claro
+    - correto
+- intent: deny
+  examples: |
+    - não
+    - n
+    - nao
+    - Nunca
+    - Eu não acho
+    - de jeito nenhum
+    - Na verdade não
+    - nem pensar
+    - não quero
+    - não quero nem pensar
+- intent: bot_challenge
+  examples: |
+    - voce é um bot
+    - voce é um robô
+    - voce é um chatbot
+- intent: nao_entende
+  examples: |
+    - sidjsidhjiosdfuhsd
+    - weoiqwopqwopeiq
+    - kkkkkkkkkkkkkkkkkkkkk
+    - aaaaaaaaaaaaaaaaaaaaaaaa
+    - ALSDKSODKOSKDOS
+    - não funcionou
+    - não é isso que eu quero
+    - ta errado
+    - Não está funcionando
+    - quero encomendar uma pizza
+    - quero comprar um carro
+    - quero comprar um celular
+    - QUE TAL UM EMPRESTIMO DE  R$50000
+    - voce nao pode ficar de fora dessa
+    - vote no fulano de tal
+    - pderia enviar o cardrapio
+    - conta digital informa
+    - simule agora o financiamento do seu carro ou moto
+    - contrate agora internet super veloz
+    - é da policia?
+    - voces vendem drogas?
+    - voces vendem caes?
+    - quero comprar um cavalo
+    - comprar uma casa
+    - voces alugam carros?
+    - voces alugam casas?
+    - no céu tem pão?
+    - não está dando certo
+- intent: palavroes
+  examples: |
+    - vai tomar no cu
+    - vai se fuuuderrr
+    - vai se fuderrr
+    - vtnc
+    - pnc
+    - pqp vtnc fdp
+    - seu grande fdp
+    - bando de corno
+    - bixa viado do caralho
+    - filhos da puta
+    - hijo de puta cabron la puta madre
+    - fuck you
+    - son of a bitch
+    - putos
+    - putao
+    - lazarenta
+    - filho da puta
+    - filho da galinha
+    - caralho
+    - cacete
+    - porra
+    - bosta
+    - bot inútil
+    - imprestável de merda
+    
+- intent: inform_option
+  examples: |
+    - opção 1(type_option)
+    - Opção 2(type_option)
+    - quero acessar opcao 3(type_option)
+    - 4(type_option)
+    - ver opcao 5(type_option)
+    - Quero fazer uma doação(type_option)
+    - quero ser colaborador(type_option)
+    - Desejo ser um colaborador(type_option)
+    - como faço para ajudar(type_option)?
+    - um animal precisa de resgate(type_option)
+    - preciso de ajuda(type_option)
+    - gostaria de saber mais sobre(type_option) a Bicharada
+    - O que a Bicharada faz(type_option)?
+    - adotar(type_option)
+    - adoção(type_option)
+    - quero adotar(type_option) 
+    - como eu adoto(option? 
+    - como faço para adotar(type_option) um animal? 
+    - posso adotar(type_option) um pet ?
+    - Como adotar(type_option) um cão
+    - quero um cachorro
+    - quero um gato
+    - desejo adotar(type_option) um gatinho
+
+###################################### Resgate #####################################################
+
+- intent: resgate
+  examples: |
+    - resgate
+    - Resgate
+    - Um animal precisa de ajuda
+    - ajuda
+- intent: descreve_resgate
+  examples: |
+    - [cachorro perdido](description_form)
+    - [cachorro atropelado](description_form)
+    - [meu gato está muito ruim](description_form)
+    - [meu cachorro está doente](description_form)
+    - [um gatinho foi abandonado de novo](description_form)
+    - [SOCORRO](description_form)
+    - [socorro](description_form)
+    - [Encontrei esses filhotes abandonados](description_form)
+    - [preciso de ajuda com um animal que foi atropelado](description_form)
+    - [necessito de ajuda, pois um gato foi atacado](description_form)
+    - [esse animal precisa de ajuda](description_form)
+    - [gatinhos abandonados](description_form)
+    - [Animal doente](description_form)
+    - [cachorro doente](description_form)
+    - [GATO PRECISANDO DE SOCORRO](description_form)
+    - [um cão precisa de ajuda](description_form)
+    - [um gato precisa de ajuda](description_form)
+    - [um gato precisa de resgate](description_form)
+    - [um cachorro foi atropelado](description_form)
+    - [um gato foi atropelado](description_form) 
+    - [preciso de ajuda com um gatinho que foi atropelado](description_form)
+    - [Encontrei um cachorro que está muito debilitado](description_form)
+    - [Preciso de ajuda da bicharada para acolher esse cachorro](description_form)
+    - [Esse gato foi encontrado nesse estado](description_form)
+    - [esse gato foi abandonado](description_form)
+    - [Cachorro foi atropelado](description_form)
+    - [preciso de um resgate para um cachorro](description_form)
+    - [um cão precisa de resgate](description_form)
+    - [um cachorro precisa de resgate](description_form)
+    - [um animal precisa de resgate](description_form)
+    - [um animal precisa de ajuda](description_form)
+    - [um cão precisa de ajuda](description_form)
+    - [um gato precisa de ajuda](description_form)
+    - [um gato precisa de resgate](description_form)
+    - [um cachorro foi atropelado](description_form)
+    - [um gato foi atropelado](description_form) 
+    - [preciso de ajuda com um gatinho que foi atropelado](description_form)
+    - [Encontrei um cachorro que está muito debilitado](description_form)
+    - [Preciso de ajuda da bicharada para acolher esse cachorro](description_form)
+    - [Esse gato foi encontrado nesse estado](description_form)
+    - [esse gato foi abandonado](description_form)
+    - [pelo amor de deus me ajuda](description_form)
+    - [PELO AMOR DE DEUS ME AJUDA](description_form)
+    - [Estou desesperada, não sei oq fazer](description_form)  
+    - [encontrei uma caixa com seis gatinhos abandonados aqui perto de casa](description_form)
+    - [um monte de filhotinhos abandonados aqui no campo](description_form)
+    - [Pessoal eu trabalho na escola São Miguel, e no beco ao lado tem esses dois filhotes e mamãe. Eles eram 7 mas 4 foram atropelados, pois eles andam no meio da rua procurando por comida](description_form)
+    - [Esse fofinho foi abandonado junto com seus irmãozinhos em uma pracinha](description_form)
+    - [na madrugada passada dois doguinhos foram deixados no quintal da minha casa](description_form)
+    - [Infelizmente não podemos ficar com eles, por isso, estamos a procura de alguém disposto a adotar esses bichinhos super carinhosos.](description_form)
+    - [Mais um gatinho foi encontrado na FURG, provavelmente abandonado. Como tem cachorros no campus, ele está correndo perigo.](description_form)
+    - [Estou com essa cachorrinha, estava assustada na rua com vários cachorros na volta.](description_form)
+    - [Foi encontrada com a perna machucada e tomada de bicheiras](description_form)
+    - [esse cãozinho foi encontrado no campus. Pode ter sido abandonado ou está perdido.](description_form)
+################################### Doação #######################################################
+- intent: doacao
+  examples: |
+    - doacao
+    - Doação
+    - quero fazer uma doação
+    - desejo fazer uma doação
+    - onde posso entregar minhas doações
+- intent: tipo_doacao
+  examples: |
+    - Ração
+    - Medicação
+    - Roupas
+    - Casinhas
+    - Cobertor
+    - Shampoo
+    - Agasalhos
+- intent: descreve_doacao
+  examples: |
+    - [Ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Medicação]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Roupas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [quero fazer uma doação]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [Casinhas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Cobertor]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Shampoo]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Agasalhos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero fazer uma doação]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero doar para bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [QUERO DOAR PARA BICHARADA]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [gostaria de fazer uma doação]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [doacao]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero doar remédios]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [quero doar remedios]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [doar remedios]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [doar comida]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [fazer doação de roupas e agasalhos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [quero dar para bicharada um pacote de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [quero dar para vocês algumas coisas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"}
+    - [quero fazer uma doacao]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [queria contribuir com algumas roupas para o brechó]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero dar ração para a bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [DOAÇÃO]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [desejo doar para os bichinhos da bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Tenho algumas coisas para doar para o brechó]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Tenho remedinhos para pulgas e carrapatos que não uso para doar para bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [sobraram alguns shampoos do meu cachorrinho e não vou usar mais, queria dar para bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero entregar uma cesta de cosméticos para vocês sortearem]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quais são as contas da bicharada que podemos doar dinheiro?]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [vi no instagram a postagem sobre o cachorrinho e gostaria de contribuir com a vakinha, como posso fazer isso?]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [vi que vocês estão arrecadando roupas para o brechó da bicharada, onde posso levar ela?]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [vocês aceitam doações?]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [como ajudar vocês?]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Tenho alguns medicamentos que não uso mais]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Quero doar ração para bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Gostaria de doar roupas para o brechó da bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Gostaria de doar uma casa de cachorro para os animais da bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Doar ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [quero dar agasalhos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [medicamentos sem uso]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Paracetamol 50mg]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Anti-pulgas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Ração para gatos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [racao para cachorros]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [comida para doguinhos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [blusas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [sapatos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [casacos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [jaquetas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [bolsas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [livros]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [vermifugos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Tenho vermifugos que sobrou]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [TreeDogs de 8kg]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Pacote de 10kg de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [1 kg de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Areia para gatos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Remédio]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [remedio]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [remédio para pulgas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [antipulgas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Ração para filhotes]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [comida para filhotes]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [leite]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [alimentos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [alimento não perecível]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [alimento]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [PremieR]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Ração PremieR]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Ração GranPlus Menu Carne e Arroz para Cães Filhotes]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Ração sabor carne]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Vermífugos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Coleiras]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Tenho disponíveis algumas peças de roupas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [5 blusas vermelhas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [calças jeans]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [14 casacos e 2 vestidos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [5 bermudas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Dois quilos de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [dois pacotes de racao]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [dramin de 10 mg]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [deixei pago um pacote de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Deixei pago ração de 3 kg na casa de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Comprei remedio para doar para bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Roupas para vender no brechó da bicharada]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [algumas roupas para o brechó]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [poucas roupas para o brechó]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [Estou deixando pago um pacote de ração]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [estou deixando pago uns remédios]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [casinhas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [casinha]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [roupas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [peças de roupas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [casa para cachorros]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [casa para cachorrinhos de porte pequeno]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [puff para cachorro]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [bebedouro]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [bebedouro para animais]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [roupinhas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [blusões]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [potes]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [tigelas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [bacias]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [café]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [arranhador para gatos]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [arranhador]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [sofá]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [geladeira]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [televisão]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [tv]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [microondas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [pomadas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [polmagadas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+    - [frutas]{"entity": "description_escrita", "value": "Quero fazer uma doação para ajudar Bicharada"} 
+- intent: ajud_financeira
+  examples: |
+    - [pix]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"} 
+    - [transferência]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [dinheiro]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [cofrinho]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [Como faço para ajudar no pix day?]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [quero contribuir com o pix day?]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [como eu faço para doar no pix day?]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [quero fazer uma doação em forma de pix]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [quero doar pix]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [quero doar dinheiro]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+    - [como colaborar com vocês financeiramente?]{"entity": "description_escrita", "value": "Quero fazer uma doação financeira para a Bicharada"}
+- intent: inform_local_rg
+  examples: |
+    - endereços em RG
+    - endereços em Rio Grande
+    - onde doar em Rio Grande
+    - como doar em Rio Grande
+    - doar Rio Grande
+    - onde em Rio Grande
+    - rg
+    - Rio Grande
+- intent: inform_local_ca
+  examples: |
+    - endereços em Cassino
+    - endereços em Cassino
+    - onde doar em Cassino
+    - como doar em Cassino
+    - doar Cassino
+    - onde em Cassino
+    - kss
+    - css
+    - Cassino
+
+######################################## Adoção ###########################################################
+
+- intent: adocao
+  examples: |
+    - adocao
+    - Adoção
+    - quero fazer uma adoção
+    - quero adotar um animal
+    - desejo fazer uma adoção
+    - quero adotar
+    - como funciona as adoções
+
+- intent: type_dog
+  examples: |
+    - [cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar um doguinhos]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar um cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher um cão para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender um cão]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de um cão]{"entity": "description_form", "value": "Adoção de Cachorros"}
+    - [doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar um doguinhos]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar um cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher um doguinho para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de um doguinho]{"entity": "description_form", "value": "Adoção de Cachorros"}
+    - [cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar um cachorros]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar um cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher um cachorro para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de um cachorro]{"entity": "description_form", "value": "Adoção de Cachorros"}
+    - [cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar um cachorrinhos]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar um cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher um cachorrinho para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de um cachorrinho]{"entity": "description_form", "value": "Adoção de Cachorros"}
+    - [cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar uma cachorrinhas]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar uma cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher uma cachorrinha para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de uma cachorrinha]{"entity": "description_form", "value": "Adoção de Cachorros"}
+    - [cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero adotar uma cadelas]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [gostaria de adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [poderia adorar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou adoatar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [posso adotar uma cachoro]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [vou seguir e adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [tomar a atitude de adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [prefiro adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero escolher uma cadela para adotar]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [quero aderir a adoção de uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [aceitar e adotar uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [abraçar a adoção de uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [apoiar a adoção de uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [defender uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"} 
+    - [exercer a adoção de uma cadela]{"entity": "description_form", "value": "Adoção de Cachorros"}
+- intent: type_cat
+  examples: |
+    - [gato]{"entity": "description_form", "value": "Adoção de Gatos"}
+    - [quero um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [gostaria de adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [poderia adorar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou adoatar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [posso adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou seguir e adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [tomar a atitude de adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [prefiro adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero escolher um gato para adotar]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero aderir a adoção de um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [aceitar e adotar um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [abraçar a adoção de um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [apoiar a adoção de um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [defender um gato]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [exercer a adoção de um gato]{"entity": "description_form", "value": "Adoção de Gatos"}
+    - [gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero adotar gatinhos]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [gostaria de adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [poderia adorar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou adoatar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [posso adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou seguir e adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [tomar a atitude de adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [prefiro adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero escolher um gatinho para adotar]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero aderir a adoção de um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [aceitar e adotar um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [abraçar a adoção de um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [apoiar a adoção de um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [defender um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [exercer a adoção de um gatinho]{"entity": "description_form", "value": "Adoção de Gatos"}
+    - [gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [gostaria de adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [poderia adorar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou adoatar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [posso adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou seguir e adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [tomar a atitude de adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [prefiro adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero escolher uma gata para adotar]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero aderir a adoção de uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [aceitar e adotar uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [abraçar a adoção de uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [apoiar a adoção de uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [defender uma gata]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [exercer a adoção de uma gata]{"entity": "description_form", "value": "Adoção de Gatos"}
+    - [gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [gostaria de adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [poderia adorar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou adoatar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [posso adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [vou seguir e adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [tomar a atitude de adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [prefiro adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero escolher uma gatinha para adotar]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [quero aderir a adoção de uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [aceitar e adotar uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [abraçar a adoção de uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [apoiar a adoção de uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+    - [defender uma gatinha]{"entity": "description_form", "value": "Adoção de Gatos"} 
+
+########################## Colaborador e Lar Voluntário #####################################################
+
+- intent: colaborador
+  examples: |
+    - colaborador
+    - Colaborador
+    - Quero ser um colaborador
+    - Como faço para ajudar?
+    - Quero ajudar a bicharada
+
+  # - [quero ser um voluntario]{"entity": "colaborador_escrita", "value": "colaborador_escrita"} 
+- intent: voluntario
+  examples: |
+    - [Quero ser voluntário]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [Quero ser voluntário]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [quero ser um voluntário]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [quero ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [Quero ser um voluntário]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [Eu quero ser um voluntário]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [desejo ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [desejo ser um voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [sou voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [sou um voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [me chamo Rodrigo e quero ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [me chamo Rodrigo e quero ser um voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [gostaria de ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [gostaria de ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [voluntária]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [posso ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [posso ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [eu quero ser um voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [eu quero ser uma voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [queria tentar ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [queria tentar ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [onde posso me cadastrar para ser voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [quero me cadastrar para ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [vou ser um voluntario]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [vou ser uma voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [onde posso ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [onde posso ser voluntaria]{"entity": "description_form", "value": "Quero ser voluntário"}
+    - [como faço para ser voluntário?]{"entity": "description_form", "value": "Quero ser voluntário"}
+
+
+- intent: lar_temporario
+  examples: |
+    - [quero ser um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO SER UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ser um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO SER UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero ser um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero ser um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO AJUDAR COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ajudar algum animal com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ajudar algum animal com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO AJUDAR ALGUM ANIMAL COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero contribuir com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO CONTRIBUIR COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero contribuir com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO CONTRIBUIR COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero contribuir com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Quero contribuir com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [tenho interesse de ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [TENHO INTERESSE DE AJUDAR COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [tenho interesse de ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Tenho interesse de ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [TENHO INTERESSE DE AJUDAR COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Tenho interesse de ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [posso ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [POSSO AJUDAR COM UM LAR TEMPORÁRIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [posso ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [POSSO AJUDAR COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Posso ajudar com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [POSSO AJUDAR COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Posso ajudar com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Desejo ajudar algum animal com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [DESEJO AJUDAR ALGUM ANIMAL COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [Desejo ajudar algum animal com um lar temporario]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [DESEJO AJUDAR ALGUM ANIMAL COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [desejo ajudar algum animal com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [DESEJO AJUDAR ALGUM ANIMAL COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ser voluntário e ajudar algum animal com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO SER VOLUNTÁRIO E AJUDAR ALGUM ANIMAL COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [quero ser voluntario com um lar temporário]{"entity": "description_form", "value": "Quero ser lar temporário"}
+    - [QUERO SER VOLUNTARIO COM UM LAR TEMPORARIO]{"entity": "description_form", "value": "Quero ser lar temporário"}
+
+############################## Informações ###################################################################
+
+- intent: informacoes
+  examples: |
+    - informacoes
+    - Informações
+    - Quero saber mais informações sobre a Bicharada
+    - Sobre a bicharada
+    - Qual é o trabalho da bicharada?
+- intent: info_eventos
+  examples: |
+    - eventos na cidade
+    - eventos em rio grande
+    - quais eventos tem na ciade essa semana?
+    - tem algum evento?
+    - quantos eventos tem na cidade
+- intent: info_contato_sobre_bicharada
+  examples: |
+    - qual o contato da bicharada
+    - quero o telefone da bicharada
+    - qual o e-mail da bichadara?
+    - como posso entrar em contato?
+    - preciso entrar em contato com vocês
+- intent: info_controle_animais
+  examples: |
+    - quantos animais vocês tem?
+    - todos os animais estão vacinados
+    - quero saber quantos animais tem ai?
+    - quantidade de cachorros
+    - quantidade de gatos
+    - quantidade de animais
+
+############################### Informações de contato #############################################
+
+- intent: info_contato
+  examples: |
+    - [Me chamo Ana meu telefone é (53)99149-2626](contact_form)
+    - [Meu nome é Rodrigo meu telefone é (53)99149-2626](contact_form)
+    - [Meu nome é rodrigo meu telefone é 5399149-2626](contact_form)
+    - [Meu nome é rodrigo meu telefone é 53991492626](contact_form)
+    - [Nome Maria Julia Telefone 32351485](contact_form)
+    - [ME CHAMO MARCIA CONTATO (51)984512667](contact_form)
+    - [Vinicius 981479632](contact_form)
+    - [vinicius 981479632](contact_form)
+    - [vinicius 53981479632](contact_form)
+    - [vinicius (53)981479632](contact_form)
+    - [vinicius (53)981-47-96-32](contact_form)
+    - [Vinicius (53)98147-9632](contact_form)
+    - [212547-9897 Everton](contact_form)
+    - [William 55-987436587](contact_form)
+    - [Nathalia, telefone (53)981475683](contact_form)
+    - [Rogério (53)991475663](contact_form)
+    - [felipe (53)98763541223](contact_form)
+    - [meu nome eh Suelen 997635478](contact_form)
+    - [Ricardo 32359687](contact_form)
+    - [Enzo](contact_form)
+    - [ana flavia (53)923978415](contact_form)
+    - [Heitor (53)99178632545](contact_form)
+    - [Everton 53-991492336](contact_form)
+    - [Chico 984756325](contact_form)
+    - [Sarah 21254698](contact_form)
+    - [Paulo  (51)984756321](contact_form)
+    - [João 991475663](contact_form)
+    - [Meu nome é Fernando](contact_form)
+    - [Meu nome é Joaquim](contact_form)
+    - [Meu nome é André](contact_form)
+    - [Meu nome é Tomás](contact_form)
+    - [Meu nome é Francisco](contact_form)
+    - [Meu nome é Rodrigo](contact_form)
+    - [Meu nome é Lucas](contact_form)
+    - [meu nome é lucas](contact_form)
+    - [Meu nome é Igor](contact_form)
+    - [Meu nome é Antonio](contact_form)
+    - [Meu nome é Ian](contact_form)
+    - [Meu nome é Luiz](contact_form)
+    - [Meu nome é Juan](contact_form)
+    - [Meu nome é Diogo](contact_form)
+    - [Meu nome é Otávio](contact_form)
+    - [Meu nome é Nathan](contact_form)
+    - [Meu nome é Miguel](contact_form)
+    - [Meu nome é Davi](contact_form)
+    - [Meu nome é Gabriel](contact_form)
+    - [me chamo Arthur](contact_form)
+    - [me chamo Lucas](contact_form)
+    - [me chamo lucas](contact_form)
+    - [me chamo Matheus](contact_form)
+    - [me chamo Pedro](contact_form)
+    - [me chamo pedro](contact_form)
+    - [me chamo Guilherme](contact_form)
+    - [me chamo guilherme](contact_form)
+    - [me chamo gabriel](contact_form)
+    - [me chamo gabriela](contact_form)
+    - [me chamo gabrielly](contact_form)
+    - [me chamo gabrielle](contact_form)
+    - [me chamo Gustavo](contact_form)
+    - [me chamo Rafael](contact_form)
+    - [me chamo Felipe](contact_form)
+    - [me chamo Bernardo](contact_form)
+    - [me chamo Enzo](contact_form)
+    - [me chamo Nicolas](contact_form)
+    - [me chamo Pedro](contact_form)
+    - [me chamo Cauã](contact_form)
+    - [me chamo Vitor](contact_form)
+    - [me chamo Eduardo](contact_form)
+    - [me chamo Daniel](contact_form)
+    - [me chamo Henrique](contact_form)
+    - [me chamo Murilo](contact_form)
+    - [me chamo Vinicius](contact_form)
+    - [me chamo Samuel](contact_form)
+    - [pode me chamar de Pietro](contact_form)
+    - [pode me chamar de Leonardo](contact_form)
+    - [pode me chamar de Caio](contact_form)
+    - [pode me chamar de Heitor](contact_form)
+    - [pode me chamar de Lorenzo](contact_form)
+    - [pode me chamar de Isaac](contact_form)
+    - [pode me chamar de Lucca](contact_form)
+    - [pode me chamar de Thiago](contact_form)
+    - [pode me chamar de Theo](contact_form)
+    - [pode me chamar de Bruno](contact_form)
+    - [pode me chamar de Bryan](contact_form)
+    - [pode me chamar de Carlos](contact_form)
+    - [pode me chamar de Luiz](contact_form)
+    - [pode me chamar de Breno](contact_form)
+    - [pode me chamar de Emanuel](contact_form)
+    - [pode me chamar de Ryan](contact_form)
+    - [pode me chamar de Vitor](contact_form)
+    - [pode me chamar de gabriel](contact_form)
+    - [pode me chamar de gabriela](contact_form)
+    - [pode me chamar de gabrielly](contact_form)
+    - [pode me chamar de gabrielle](contact_form)
+    - [pode me chamar de Yuri](contact_form)
+    - [pode me chamar de Benjamin](contact_form)
+    - [pode me chamar de Erick](contact_form)
+    - [pode me chamar de Calebe](contact_form)
+    - [pode me chamar de Danilo](contact_form)
+    - [pode me chamar de Luan](contact_form)
+    - [pode me chamar de Luiz](contact_form)
+    - [pode me chamar de Kaique](contact_form)
+    - [pode me chamar de Alexandre](contact_form)
+    - [pode me chamar de Iago](contact_form)
+    - [pode me chamar de Ricardo](contact_form)
+    - [pode me chamar de Raul](contact_form)
+    - [pode me chamar de Marcelo](contact_form)
+    - [pode me chamar de Julio](contact_form)
+    - [pode me chamar de Cauê](contact_form)
+    - [pode me chamar de Benício](contact_form)
+    - [pode me chamar de Vitor](contact_form)
+    - [pode me chamar de Augusto](contact_form)
+    - [pode me chamar de Pedro](contact_form)
+    - [pode me chamar de Luiz](contact_form)
+    - [pode me chamar de Giovanni](contact_form)
+    - [pode me chamar de Renato](contact_form)
+    - [pode me chamar de Diego](contact_form)
+    - [nome: Renan de souza santos silva](contact_form)
+    - [nome: renan de oliveira carvalho](contact_form)
+    - [nome: Renato de santos guedes](contact_form)
+    - [nome: renato madruga silva](contact_form)
+    - [nome: luiz  mirapalheta padilha](contact_form)
+    - [nome: Luiz de nobrega](contact_form)
+    - [nome: Anthony paiva germano](contact_form)
+    - [nome: Lucas guerrero](contact_form)
+    - [nome: lucy crescencio barbosa](contact_form)
+    - [nome: Lucy bachini zanchetta](contact_form)
+    - [nome: Thales coelho botelho](contact_form)
+    - [nome: Luiz calcanhoto batista azevedo](contact_form)
+    - [nome: Henry ulguim donato](contact_form)
+    - [nome: Marcos de minare lima](contact_form)
+    - [nome: Kevin pernigoti pedroso](contact_form)
+    - [nome: Levi oliveira leston vieira pedroso](contact_form)
+    - [nome: Enrico soares araujo frança](contact_form)
+    - [nome: Hugo de schmitz schutz schwartz](contact_form)
+    - [nome: Luiz vilhena Noble geisler](contact_form)
+    - [nome: Matheus rangel gomes martins](contact_form)
+    - [nome: Helena fernandes rodrigues](contact_form)
+    - [nome: Alice Francone goulart maurano](contact_form)
+    - [nome: Laura kaus guimaraes](contact_form)
+    - [nome: Manuela loreiro alencar](contact_form)
+    - [nome: Valentina mazzarello alfaro fantinel](contact_form)
+    - [nome: Sophia aguive ribeiro rocha torres](contact_form)
+    - [nome: Isabella Pestano mascarenha bastos](contact_form)
+    - [nome: Heloísa](contact_form)
+    - [nome: Luiza](contact_form)
+    - [nome: Brambylla stephany](contact_form)
+    - [nome: Andryon assange ferdinando](contact_form)
+    - [nome: andryon Assange Ferdinando](contact_form)
+    - [nome: Yasmilla Valdirene silva](contact_form)
+    - [nome: yasmilla](contact_form)
+    - [nome: Júlia](contact_form)
+    - [nome: Lorena](contact_form)
+    - [nome: Lívia](contact_form)
+    - [nome: Maria](contact_form)
+    - [nome: Cecília](contact_form)
+    - [nome: Eloá](contact_form)
+    - [nome: Giovanna](contact_form)
+    - [nome: Mariana](contact_form)
+    - [nome: Lara](contact_form)
+    - [nome: Beatriz](contact_form)
+    - [nome: Lígia](contact_form)
+    - [nome: Antonella](contact_form)
+    - [nome: lígia](contact_form)
+    - [nome: lívia](contact_form)
+    - [nome: Emanuelly](contact_form)
+    - [nome: Emanuella](contact_form)
+    - [nome: emanuelly](contact_form)
+    - [nome: Isadora](contact_form)
+    - [nome: Ana](contact_form)
+    - [nome: Melissa](contact_form)
+    - [nome: Esther](contact_form)
+    - [nome: Lavínia](contact_form)
+    - [nome: Maitê](contact_form)
+    - [nome: maitê](contact_form)
+    - [nome: Sarah](contact_form)
+    - [nome: Elisa](contact_form)
+    - [nome: Liz](contact_form)
+    - [nome: Yasmin](contact_form)
+    - [nome: Isabelly](contact_form)
+    - [nome: Alícia](contact_form)
+    - [nome: Clara](contact_form)
+    - [nome: Isis](contact_form)
+    - [nome: Rebeca](contact_form)
+    - [nome: Rafaela](contact_form)
+    - [nome: Marina](contact_form)
+    - [nome: Agatha](contact_form)
+    - [nome: Gabriela](contact_form)
+    - [nome: Catarina](contact_form)
+    - [nome: Letícia](contact_form)
+    - [nome: Mirella](contact_form)
+    - [nome: Nicole](contact_form)
+    - [Luna telefone: 55 99543654](contact_form)
+    - [Olívia telefone: 55 99543654](contact_form)
+    - [Vitória telefone: 55 99543654](contact_form)
+    - [Ana telefone: 55 99543654](contact_form)
+    - [Allana telefone: 55 99543654](contact_form)
+    - [Milena telefone: 55 99543654](contact_form)
+    - [Emilly telefone: 55 99543654](contact_form)
+    - [Ayla telefone: 55 99543654](contact_form)
+    - [Maya telefone: 55 99543654](contact_form)
+    - [Bianca telefone: 55 99543654](contact_form)
+    - [Clarice telefone: 55 99543654](contact_form)
+    - [Aurora telefone: 55 99543654](contact_form)
+    - [Larissa telefone: 55 99543654](contact_form)
+    - [Pietra telefone: 55 99543654](contact_form)
+    - [Laís telefone: 55 99543654](contact_form)
+    - [Stella telefone: 55 99543654](contact_form)
+    - [Eduarda telefone: 55 99543654](contact_form)
+    - [Carolina telefone: 55 99543654](contact_form)
+    - [Malu telefone: 55 99543654](contact_form)
+    - [Gabrielly telefone: 55 99543654](contact_form)
+    - [Analu telefone: 55 99543654](contact_form)
+    - [Amanda telefone: 55 99543654](contact_form)
+    - [Louise telefone: 55 99543654](contact_form)
+    - [Heloise telefone: 55 99543654](contact_form)
+    - [Fernanda telefone: 55 99543654](contact_form)
+    - [Melina telefone: 55 99543654](contact_form)
+    - [Bella telefone: 55 99543654](contact_form)
+    - [Joana telefone: 55 99543654](contact_form)
+    - [Isabel telefone: 55 99543654](contact_form)
+    - [Melinda telefone: 55 99543654](contact_form)
+    - [Pérola telefone: 55 99543654](contact_form)
+    - [nome: Renan](contact_form)
+    - [nome: renan](contact_form)
+    - [nome: Renato](contact_form)
+    - [nome: renato](contact_form)
+    - [nome: luiz](contact_form)
+    - [nome: Luiz](contact_form)
+    - [nome: Anthony](contact_form)
+    - [nome: Lucas](contact_form)
+    - [nome: lucy](contact_form)
+    - [nome: Lucy](contact_form)
+    - [nome: Thales](contact_form)
+    - [nome: Luiz](contact_form)
+    - [nome: Henry](contact_form)
+    - [nome: Marcos](contact_form)
+    - [nome: Kevin](contact_form)
+    - [nome: Levi](contact_form)
+    - [nome: Enrico](contact_form)
+    - [nome: Hugo](contact_form)
+    - [nome: Luiz](contact_form)
+    - [nome: Matheus](contact_form)
+    - [nome: Helena](contact_form)
+    - [nome: Alice](contact_form)
+    - [nome: Laura](contact_form)
+    - [nome: Manuela](contact_form)
+    - [nome: Valentina](contact_form)
+    - [nome: Sophia](contact_form)
+    - [nome: Isabella](contact_form)
+    - [nome: Heloísa](contact_form)
+    - [nome: Luiza](contact_form)
+    - [nome: Júlia](contact_form)
+    - [nome: Lorena](contact_form)
+    - [nome: Lívia](contact_form)
+    - [nome: Maria](contact_form)
+    - [nome: Cecília](contact_form)
+    - [nome: Eloá](contact_form)
+    - [nome: Giovanna](contact_form)
+    - [nome: Mariana](contact_form)
+    - [nome: Lara](contact_form)
+    - [nome: Beatriz](contact_form)
+    - [nome: Lígia](contact_form)
+    - [nome: Antonella](contact_form)
+    - [nome: Lívia](contact_form)
+    - [nome: lígia](contact_form)
+    - [nome: lívia](contact_form)
+    - [nome: Emanuelly](contact_form)
+    - [nome: Emanuella](contact_form)
+    - [nome: emanuelly](contact_form)
+    - [nome: Isadora](contact_form)
+    - [nome: Ana](contact_form)
+    - [nome: Melissa](contact_form)
+    - [nome: Esther](contact_form)
+    - [nome: Lavínia](contact_form)
+    - [nome: Maitê](contact_form)
+    - [nome: maitê](contact_form)
+    - [nome: Sarah](contact_form)
+    - [nome: Elisa](contact_form)
+    - [nome: Liz](contact_form)
+    - [nome: Yasmin](contact_form)
+    - [nome: Isabelly](contact_form)
+    - [nome: Alícia](contact_form)
+    - [nome: Clara](contact_form)
+    - [nome: Isis](contact_form)
+    - [nome: Rebeca](contact_form)
+    - [nome: Rafaela](contact_form)
+    - [nome: Marina](contact_form)
+    - [nome: Ana](contact_form)
+    - [nome: Agatha](contact_form)
+    - [nome: Gabriela](contact_form)
+    - [nome: Catarina](contact_form)
+    - [nome: Letícia](contact_form)
+    - [nome: Mirella](contact_form)
+    - [nome: Nicole](contact_form)
+    - [Luna telefone: 55 99543654](contact_form)
+    - [Olívia telefone: 55 99543654](contact_form)
+    - [Vitória telefone: 55 99543654](contact_form)
+    - [Ana telefone: 55 99543654](contact_form)
+    - [Allana telefone: 55 99543654](contact_form)
+    - [Milena telefone: 55 99543654](contact_form)
+    - [Emilly telefone: 55 99543654](contact_form)
+    - [Ayla telefone: 55 99543654](contact_form)
+    - [Maya telefone: 55 99543654](contact_form)
+    - [Bianca telefone: 55 99543654](contact_form)
+    - [Clarice telefone: 55 99543654](contact_form)
+    - [Aurora telefone: 55 99543654](contact_form)
+    - [Larissa telefone: 55 99543654](contact_form)
+    - [Pietra telefone: 55 99543654](contact_form)
+    - [Laís telefone: 55 99543654](contact_form)
+    - [Stella telefone: 55 99543654](contact_form)
+    - [Eduarda telefone: 55 99543654](contact_form)
+    - [Carolina telefone: 55 99543654](contact_form)
+    - [Malu telefone: 55 99543654](contact_form)
+    - [Gabrielly telefone: 55 99543654](contact_form)
+    - [Analu telefone: 55 99543654](contact_form)
+    - [Amanda telefone: 55 99543654](contact_form)
+    - [Louise telefone: 55 99543654](contact_form)
+    - [Heloise telefone: 55 99543654](contact_form)
+    - [Fernanda telefone: 55 99543654](contact_form)
+    - [Ana telefone: 55 99543654](contact_form)
+    - [Melina telefone: 55 99543654](contact_form)
+    - [Bella telefone: 55 99543654](contact_form)
+    - [Joana telefone: 55 99543654](contact_form)
+    - [Isabel telefone: 55 99543654](contact_form)
+    - [Melinda telefone: 55 99543654](contact_form)
+    - [Pérola telefone: 55 99543654](contact_form)
+- intent: info_local
+  examples: |
+    - [Meu endereço é Avenida dos grandos lagos, 113](address_form)
+    - [moro rua das alamedas, 188 - Pelotas](address_form)
+    - [Av. Presidente Vargas, 123](address_form)
+    - [avenida dos grandes lagos, 114](address_form)
+    - [Rua Acre 98](address_form)
+    - [rua marechal deodoro 144](address_form)
+    - [Avenida Carlos Gomes, 8586](address_form)
+    - [Cassino -  avenida rio grande, 63](address_form)
+    - [Bairro Parque Marinha -  Rua das Enseadas, 232](address_form)
+    - [Endereço rua sete de setembro, 553](address_form)
+    - [rua b, 23](address_form)
+    - [rua 15 - 254](address_form)
+    - [Rua das Travessas 123](address_form)
+    - [rua oswaldo aranha - nº 63](address_form)
+    - [av castelo branco nº 124](address_form)
+    - [avenida ricardo dias, nº 78754](address_form)
+    - [ele se encontra na avenida dos oceanos, 123](address_form)
+    - [avenida itália, nº 233](address_form)
+    - [Rua Paraguai, 638](address_form)
+    - [rua julio de castilhos, nº 78](address_form)
+    - [rua paraguai, 638](address_form)
+    - [Avenida Nova Atlantica](address_form)
+    - [Rua Riacho](address_form)
+    - [Rua Rio Capiberibe](address_form)
+    - [Avenida Tramandai](address_form)
+    - [Rua Professor Fernando Bianchini](address_form)
+    - [Rua Principal](address_form)
+    - [Rua Mário Nicola](address_form)
+    - [Rua Dunas](address_form)
+    - [Rua José Verissimo](address_form)
+    - [Rua Cotegipe](address_form)
+    - [Rua Isnard Poester Peixoto](address_form)
+    - [Rua Manoel Saul da Silva](address_form)
+    - [Rua Veterano Sport Clube Rio Grande](address_form)
+    - [Rua Oscar Ferreiro de Campos Moraes](address_form)
+    - [Rua João Baptista Ferrabeto](address_form)
+    - [Rua Israel Nisenson](address_form)
+    - [Rua Beira Mar](address_form)
+    - [Rua Paulo de Frontin](address_form)
+    - [Travessa João Batista Ferrareto](address_form)
+    - [Rua Visconde de Paranagua](address_form)
+    - [Rua Manoel da Ponte Jerônimo](address_form)
+    - [Rua Oito de Julho](address_form)
+    - [Avenida Portuária](address_form)
+    - [Rua Cento e Trinta](address_form)
+    - [Rua Suelly Costa Lopes do Valle Zogbi](address_form)
+    - [Alameda Cinquenta e Cinco](address_form)
+    - [Rua Estados Unidos da América do Norte](address_form)
+    - [Rua Ilha de Bananal](address_form)
+    - [Rua Novo Hamburgo](address_form)
+    - [Rua Afonso Celso](address_form)
+    - [Rua Ilhas Canarias](address_form)
+    - [Corredor Waldemar Fetter](address_form)
+    - [Rua Bolívia](address_form)
+    - [Rua João Colins](address_form)
+    - [Rua Bernardo Taveira](address_form)
+    - [Travessa Foguetes](address_form)
+    - [Rua Hélio Rego](address_form)
+    - [Rua Lili Ferreira](address_form)
+    - [Rua Cãmara](address_form)
+    - [Rua Soedy Wildt dos Santos](address_form)
+    - [Rua Anizio Machado da Costa](address_form)
+    - [Rua Espírito Santo](address_form)
+    - [Avenida Cãndido Cozza Sobrinho](address_form)
+    - [Rua João Manoel Paranhos](address_form)
+    - [Rua Bagé](address_form)
+    - [Rua Ilha da Pintada](address_form)
+    - [Rua Manoel Francisco Moita](address_form)
+    - [Rua Dalton Campos de Camargo](address_form)
+    - [Rua Newton Azevedo](address_form)
+    - [Alameda Vinte](address_form)
+    - [Rua João Anunziato Filho](address_form)
+    - [Rua José Veríssimo](address_form)
+    - [Rua Tapes](address_form)
+    - [Rua Francisco Soares de Giacomo](address_form)
+    - [Rua Nilo Gollo](address_form)
+    - [Rua Mário Werneck](address_form)
+    - [Rua Auguste Saint Hilaire](address_form)
+    - [Rua Ilha do Havai](address_form)
+    - [Rua Ladario](address_form)
+    - [Rua José de Alencar](address_form)
+    - [Avenida Professor Felgas](address_form)
+    - [Rua Ernani Fornari](address_form)
+    - [Rua G](address_form)
+    - [Rua Eduardo Araújo](address_form)
+    - [Rua Dionizio Castanheira Perez](address_form)
+    - [Rua Manoel Rechia](address_form)
+    - [Rua Trinta e Cinco](address_form)
+    - [Corredor Doutor Waldemar Fetter](address_form)
+    - [Rua Capitão Josino Dutra](address_form)
+    - [Avenida Beira Mar](address_form)
+    - [Rua Sérgio Luiz Carlos Rheingantz Pernigotti](address_form)
+    - [Rua Álamo](address_form)
+    - [Rua Carneiro Júnior](address_form)
+    - [Rua Comendador Henrique Pancada](address_form)
+    - [Travessa Macedônia](address_form)
+    - [Rua Sady Gaubert](address_form)
+    - [Avenida Tarso Dutra](address_form)
+    - [Rua Castro Alves](address_form)
+    - [Rua Ildefonso Poester](address_form)
+    - [Rua Alvares Cabral](address_form)
+    - [Rua Vital](address_form)
+    - [Rua Avelino dos Santos Martins](address_form)
+    - [Rua Neto Antonio](address_form)
+    - [Rua Eurico Gaspar Dutra](address_form)
+    - [Rua L](address_form)
+    - [Rua Visconde do Rio Branco](address_form)
+    - [Rua Ilha Bela](address_form)
+    - [Avenida dos Oceanos](address_form)
+    - [Rua James Darcy](address_form)
+    - [Rua Espiridiao de Freitas](address_form)
+    - [Rua das Missões](address_form)
+    - [Rua Brasil](address_form)
+    - [Travessa Kennedy](address_form)
+    - [Rua Darci Cunha Mattos](address_form)
+    - [Rua Bento Gonçalves](address_form)
+    - [Rua Marechal Floriano](address_form)
+    - [Rua Doutor James Darcy](address_form)
+    - [Rua Glênio Freitas](address_form)
+    - [Rua Vasco Vieira da Fonseca](address_form)
+    - [Rua Elik Wolff I](address_form)
+    - [Rua Floriano Peixoto](address_form)
+    - [Alameda Paulo Sérgio Pegas](address_form)
+    - [Rua Antônio Maria da Costa Freitas](address_form)
+    - [Rua da Patagônia](address_form)
+    - [Rua Ex-Combatente do Brasil](address_form)
+    - [Avenida Luiz Leivas Otero](address_form)
+    - [Rua Tiradentes](address_form)
+    - [Rua Érico Gama](address_form)
+    - [Rua Carlos Moll](address_form)
+    - [Rua Professor Fernando Eduardo Freire](address_form)
+    - [Rua Mário Quintas](address_form)
+    - [Rua Amaro](address_form)
+    - [Alameda Cinco](address_form)
+    - [Rua Rio Solimões](address_form)
+    - [Rua Maria](address_form)
+    - [Rua Cangussu](address_form)
+    - [Rua Élio Selistre](address_form)
+    - [Rua João Paulo I](address_form)
+    - [Rua Rio Capivari](address_form)
+    - [Rua Rio Grande](address_form)
+    - [Rua Irmão Fidêncio](address_form)
+    - [Rua Olavo Bilac](address_form)
+    - [Rua Othelo Gonçalves](address_form)
+    - [Rua Érico Peixoto](address_form)
+    - [Rua Rochedos](address_form)
+    - [Rua Padre Vieira](address_form)
+    - [Rua Cruz Alta](address_form)
+    - [Travessa João Touguinha](address_form)
+    - [Rua Conrado](address_form)
+    - [Praça Xavier Ferreira](address_form)
+    - [Avenida Ennio Rodrigues Maurer](address_form)
+    - [Rua Professor Henrique Farjat](address_form)
+    - [Travessa Fluminense](address_form)
+    - [Rua Barão de Santo Ângelo](address_form)
+    - [Rua Paulo](address_form)
+    - [Avenida Frederico Carlos de Andrade](address_form)
+    - [Rua Cônego Luiz de Carvalho](address_form)
+    - [Rua Doutor Belmiro Pegas](address_form)
+    - [Rua das Fragatas](address_form)
+    - [Rua Floriano](address_form)
+    - [Rua Cento e Quinze](address_form)
+    - [Travessa Pernambuco](address_form)
+    - [Rua Vinte e Dois](address_form)
+    - [Rua Jorge Carvalho de Campos Moraes](address_form)
+    - [Rua Charqueadas](address_form)
+    - [Rua Doutor Érico Peixoto](address_form)
+    - [Rua Quarenta e Um](address_form)
+    - [Travessa Graças](address_form)
+    - [Rua Engenheiro Luiz Arthur Ubatuba de Farias](address_form)
+    - [Rua Carlos Alberto Lopes](address_form)
+    - [Avenida Nove](address_form)
+    - [Rua João Fernandes Cardoso](address_form)
+    - [Rua Mestre Jerônimo](address_form)
+    - [Rua Cinquenta e Quatro](address_form)
+    - [Rua Senador Salgado Filho](address_form)
+    - [Rua Rio Iguatemi](address_form)
+    - [Rua Forte Santana](address_form)
+    - [Rua General Gurjão](address_form)
+    - [Rodovia Br 392](address_form)
+    - [Alameda Cinquenta e Um](address_form)
+    - [Rua Venâncio Aires](address_form)
+    - [Rua Marcelino Champagnat](address_form)
+    - [Avenida D](address_form)
+    - [Rua Intendente Werneck](address_form)
+    - [Rua Alvaro Costa](address_form)
+    - [Rua Cinquenta e Seis](address_form)
+    - [Rua Fragatas](address_form)
+    - [Rua Fernando Duprat da Silva](address_form)
+    - [Rua Rosa Cruz](address_form)
+    - [Rua Andrino](address_form)
+    - [Avenida Nova Atlãntica](address_form)
+    - [Rua Sport Clube Rio Grande](address_form)
+    - [Rua Maria Carmem](address_form)
+    - [Rua Nicolau Copérnico](address_form)
+    - [Alameda Quatorze](address_form)
+    - [Rua Vice-Almirante Abreu](address_form)
+    - [Rua Doutor Antônio Augusto Borges de Medeiros](address_form)
+    - [Rua dos Escaleres](address_form)
+    - [Rua Quintino Bocaiúva](address_form)
+    - [Rua Vitória](address_form)
+    - [Rua Carlos Barbosa](address_form)
+    - [Rua Professor Alberto Sá](address_form)
+    - [Rua Acácia Rio Grandense](address_form)
+    - [Rua Manoel Fangueiro](address_form)
+    - [Rua Salgado Filho](address_form)
+    - [Rua Elisa Emil Corrêa](address_form)
+    - [Alameda Francisco](address_form)
+    - [Alameda Doze](address_form)
+    - [Rua Dezesseis](address_form)
+    - [Rua Doutor Lázaro Ludovico Zamenhof](address_form)
+    - [Rua Mascarenhas de Moraes](address_form)
+    - [Alameda Jandyr Garcia](address_form)
+    - [Rua Cinquenta e Três](address_form)
+    - [Rua Groelândia](address_form)
+    - [Rua Vinte e Nove](address_form)
+    - [Avenida Doutor Lavieira](address_form)
+    - [Rua Antônio Gonçalves de Oliveira](address_form)
+    - [Rua Coelho Neto](address_form)
+    - [Rua Doutor Ney Brito](address_form)
+    - [Rua Antônio Augusto Borges de Medeiros](address_form)
+    - [Rua Paraguai, 638](address_form)
+    - [rua julio de castilhos, nº 78](address_form)

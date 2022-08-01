@@ -1,0 +1,221 @@
+version: "3.1"
+
+rules:
+
+  ##### Comum a todos #####
+  - rule: Quando o usuário saudar o bot, ele abre o menu de opções
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: option_form
+      - active_loop: option_form
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_goodbye
+
+  - rule: Quando o usuário questionar se está falando com um BOT
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Quando a resposta for negativa, indicar final da conversa
+    steps:
+      - intent: deny
+      - action: utter_goodbye
+
+  - rule: Quando a resposta for afirmativa, retornar ao menu inicial
+    steps:
+      - intent: affirm
+      - action: option_form
+      - active_loop: option_form
+
+  - rule: Quando o usuário digita alguma coisa que o bot não entende
+    steps:
+      - intent: nao_entende
+      - action: utter_bad
+
+  - rule: Quando o usuário digita alguma ofensa para o bot
+    steps:
+      - intent: palavroes
+      - action: utter_ofensa
+
+  ##### fluxo de informações #####
+
+  - rule: Informacoes
+    steps:
+      - intent: informacoes
+      - action: utter_information
+
+  - rule: Informacoes sobre eventos
+    steps:
+      - intent: info_eventos
+      - action: utter_explain_eventos
+      - action: utter_return_choice
+
+  - rule: Informacoes sobre contato
+    steps:
+      - intent: info_contato_sobre_bicharada
+      - action: utter_explain_sobre_bicharada
+      - action: utter_return_choice
+
+  - rule: Informacoes sobre controle de animais
+    steps:
+      - intent: info_controle_animais
+      - action: utter_explain_controle_animais
+      - action: utter_return_choice
+
+  ##### fluxo de Adoções #####
+
+  - rule: Na adoção, quando o usuário digitar cachorro
+    steps:
+      - intent: type_dog
+      - action: colaborador_escrita
+      - active_loop: colaborador_escrita
+
+  - rule: Na adoção, quando o usuário digitar gato
+    steps:
+      - intent: type_cat
+      - action: colaborador_escrita
+      - active_loop: colaborador_escrita
+
+  ##### fluxo de Resgate #####
+
+  - rule: Quando o usuário escolher a opção 'resgate'
+    steps:
+      - intent: descreve_resgate
+      - action: description_form
+      - active_loop: description_form
+
+  - rule: Quando o usuário informa o endereço
+    steps:
+      - intent: info_local
+      - action: utter_ask_informacao_usuario
+
+  - rule: Quando o usuário digitar nome e telefone
+    steps:
+      - intent: info_contato
+      - action: info_usuario_form
+      - active_loop: info_usuario_form
+  ##### fluxo de Colaborador #####
+
+  - rule: Assim que o usuário escolher colaborador > lar temporario
+    steps:
+      - intent: lar_temporario
+      - action: colaborador_escrita
+      - active_loop: colaborador_escrita
+
+  - rule: Assim que o usuário escolher colaborador > voluntario
+    steps:
+      - intent: voluntario
+      - action: colaborador_escrita
+      - active_loop: colaborador_escrita
+
+  ##### fluxo de Doação #####
+
+  - rule: Quando o usuário escolher a opção 'doações'
+    steps:
+      - intent: tipo_doacao
+      - action: utter_describe_donation
+      - action: description_escrita
+      - active_loop: description_escrita
+
+  - rule: ajuda financeira
+    steps:
+      - intent: ajud_financeira
+      - action: utter_explain_donation
+      - action: utter_thanks_donation
+      - action: description_escrita
+      - active_loop: description_escrita
+    
+  - rule: Informar ao usuário locais de doação no Centro
+    steps:
+      - intent: inform_local_rg
+      - action: utter_show_donat_rg
+      - action: utter_thanks_donation
+
+  - rule: Informar ao usuário locais de doação no Cassino
+    steps:
+      - intent: inform_local_ca
+      - action: utter_show_donat_ca
+      - action: utter_thanks_donation
+
+  ######## Quando o usuário não usar os botões #############
+  - rule: Quando o usuário escolher a opção 'doações'
+    steps:
+      - intent: descreve_doacao
+      - action: utter_local_donation
+      - action: description_escrita
+      - active_loop: description_escrita
+
+  ##### Somente envio de Formularios #####
+
+  - rule: Enviar o formulario de informações do usuario
+    condition:
+      # Condition that form is active.
+      - active_loop: info_usuario_form
+    steps:
+      # Form is deactivated
+      - action: info_usuario_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_informacao
+
+  - rule: Enviar option_form
+    condition:
+      # Condition that form is active.
+      - active_loop: option_form
+    steps:
+      # Form is deactivated
+      - action: option_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_option
+      
+
+  - rule: Enviar o formulario de descrição do ocorrido
+    condition:
+      # Condition that form is active.
+      - active_loop: description_form
+    steps:
+      # Form is deactivated
+      - action: description_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_email
+
+    
+  - rule: Enviar o formulario de quando o usuário digitar algo
+    condition:
+      # Condition that form is active.
+      - active_loop: description_escrita
+    steps:
+      # Form is deactivated
+      - action: description_escrita
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_escrita_email
+
+  - rule: Enviar o formulario de quando o usuário não usar os botões do colaboradores
+    condition:
+      # Condition that form is active.
+      - active_loop: colaborador_escrita
+    steps:
+      # Form is deactivated
+      - action: colaborador_escrita
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_escrita_email

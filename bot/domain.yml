@@ -1,0 +1,340 @@
+version: "3.1"
+
+intents:
+  # Intenções basicas
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - nao_entende
+  - bot_challenge
+  - palavroes
+  # Menu de Opção Inicial
+  - inform_option #não utilizada
+  - doacao
+  - adocao
+  - resgate
+  - colaborador
+  - informacoes
+  # Menu de Doações
+  - tipo_doacao
+  - ajud_financeira
+  - descreve_doacao
+  - inform_local_rg
+  - inform_local_ca
+  # Informações do Usuário
+  - info_contato
+  - info_local
+  # Menu de Resgate
+  - descreve_resgate
+  # Menu do Colaborador
+  - lar_temporario
+  - voluntario
+  # Menu de Adoções
+  - type_cat
+  - type_dog
+  - cat_info
+  - dog_info
+  # Menu de Informações
+  - info_eventos
+  - info_contato_sobre_bicharada
+  - info_controle_animais
+
+responses:
+
+  ##################################  Ações básicas ###############################################
+  utter_greet:
+    - text: "Olá, seja-bem vindo(a)!"
+
+  utter_did_that_help:
+    - text: "Isso ajudou você?"
+
+  utter_happy:
+    - text: "Ótimo, continue!"
+
+  utter_bad:
+    - text: |
+        Lamento, mas não entendi o que você quis dizer...
+        Peço que reformule sua frase para que possa tentar ajudar você!
+
+  utter_ofensa:
+    - text: |
+        Entendo a sua frustração, mas essas palavras são muito ofensivas e se distanciam da relação de respeito que tenho tido durante a nossa conversa.
+        Recomendo que você mude o seu jeito de comunicar.
+        Aqui vai uma musiquinha para acalmar você ☮️: https://www.youtube.com/watch?v=L3HQMbQAWRc  
+
+  utter_goodbye:
+    - text: "Tchau"
+
+  utter_iamabot:
+    - text: "Eu sou um 🤖, alimentado por Rasa."
+
+  utter_return_choice:
+    - text: "Deseja voltar ao menu anterior?"
+
+  ########################################### Menu Principal ##################################
+
+  utter_ask_type_option:
+    - text: "O que você deseja?"
+      quick_replies: # ote the button limit still applies here
+        - title: Doações para Bicharada
+          payload: '/doacao{{"type_option":"doacao"}}'
+        - title: Adoção de animais
+          payload: '/adocao{{"type_option":"adocao", "informacao_usuario":"adocao"}}'
+        - title: Animais que precisam de resgate
+          payload: '/resgate{{"type_option":"resgate", "informacao_usuario":"resgate"}}'
+        - title: Colaborador
+          payload: '/colaborador{{"type_option":"colaborador"}}'
+        - title: Informações sobre a Bicharada"
+          payload: '/informacoes{{"type_option":"informacoes"}}'
+
+  ################################### Menu de DOAÇÃO ############################################
+ 
+  utter_type_donation:
+    - text: "Qual é o tipo de doação?"
+      quick_replies:
+        - title: Doações financeiras
+          payload: '/ajud_financeira{{"informacao_usuario":"doacao", "description_escrita":"Gostaria de contribuir com ajuda financeira", "address_form": "---",  "contact_form": "---"}}'
+        - title: Medicamentos
+          payload: '/tipo_doacao{{"informacao_usuario":"doacao", "description_escrita":"Gostaria de contribuir com medicamentos", "address_form": "---",  "contact_form": "---"}}'
+        - title: "Ração"
+          payload: '/tipo_doacao{{"informacao_usuario":"doacao", "description_escrita":"Gostaria de contribuir com Ração", "address_form": "---",  "contact_form": "---"}}'
+        - title: "Roupas"
+          payload: '/tipo_doacao{{"informacao_usuario":"doacao", "description_escrita":"Gostaria de contribuir com Roupas", "address_form": "---",  "contact_form": "---"}}'
+        - title: Outros
+          payload: '/tipo_doacao{{"informacao_usuario":"doacao", "description_escrita":"Gostaria de contribuir com Outros", "address_form": "---",  "contact_form": "---"}}'
+
+  utter_local_donation:
+    - text: Qual a cidade que deseja realizar a doação?
+      #     subtitle: Subtitles are supported
+      quick_replies: # note the button limit still applies here
+        - title: Rio Grande - RS
+          payload: /inform_local_rg
+        - title: Cassino - RS
+          payload: /inform_local_ca
+
+  utter_describe_donation:
+    - text: "Escreva uma breve descrição sobre o que você deseja doar"
+
+  utter_thanks_donation:
+    - text: "Desde já, agradecemos sua colaboração \nVocê está fazendo um AUmigo 🐶 muito feliz :D!\nDeseja voltar para o menu anterior?"
+
+  utter_explain_donation:
+    - text: |
+        Você pode colaborar com os AUmiguinhos da Bicharada por diferentes meios de transferência!
+        Qualquer quantia é bem-vinda e importante para a Bicharada continar ajudando os animais!
+        Aqui estão nossas contas: 
+
+        🔵 CAIXA:
+              ▪️ Agência: 00531 
+              ▪️ Operação: 1288 
+              ▪️ Conta: 000811416654-0 
+              ▪️ Titular: Aline Porto da Cruz
+              ▪️ Chave Pix: universitaria.bicharada@gmail.com
+
+        🟣 NUBANK: 
+              ▪️ Agência: 0001 
+              ▪️ Conta: 14047408-7 
+              ▪️ Titular: Moara Maciel do Santos
+              ▪️ Chave Pix: (CPF)046.209.040-07
+
+        🟢 VAKINHA ONLINE: https://www.vakinha.com.br/2636231
+
+  utter_show_donat_rg:
+    - text: |
+        Aqui está uma lista de endereços no Centro de Rio Grande, onde você pode levar sua doação para Bicharada:
+
+        🏠 K-LATE K-MIA Petshop: Rua General Camara, 353, Centro 
+        🏠 D' TUDO Bazar e Cia: Rua Augusto Dupra't 324, Cidade Nova
+
+  utter_show_donat_ca:
+    - text: |
+        Aqui está uma lista de endereços no Cassino, onde você pode levar sua doação para Bicharada:
+
+        🏠 Zero CO2: Loja de Bicicletas Rua José Ferreira dos Santos, 374, Cassino 
+        🏠 Espaço Lambe: Rua Sérgio Daniel Freire, 268, Cassino 
+        🏠 Mapacho Tabacaria: Rua Santa Maria, 251, Cassino
+
+  ################################### Menu de ADOÇÃO #################################################
+
+  utter_adoption_type:
+    - text: "Você gostaria de adotar um 🐶cachorro ou 🐱gato?"
+      quick_replies: # note the button limit still applies here
+        - title: Gato
+          payload: '/type_cat{{"description_form":"Adoção de Gatos"}}'
+        - title: Cachorro
+          payload: '/type_dog{{"description_form":"Adoção de Cachorros"}}'
+
+  utter_esclarece_adocao:
+    - text: "Vou passar suas informações para o(a) responsável pela adoção. \n em breve entraremos em contato, Obrigado por colaborar!"
+
+  ##################################### Menu de RESGATE ##################################################
+
+  utter_resgate:
+    - text: "Certo."
+  
+  utter_ask_description_form:
+    - text: "Explique um pouco sobre a situação do animal?"
+
+  utter_ask_address_form:
+    - text: "Qual é seu endereço?"
+
+  utter_informe_resgate:
+    - text: "Logo mais, entraremos em contato! Desde já agradecemos."
+  utter_goodbye_resgate:
+    - text: "Obrigado por contribuir com o resgate do animal, até a próxima!"
+
+  ###################################  Menu de COLABORADOR ###########################################
+
+  utter_goodbye_voluntario:
+    - text: "Obrigado pelo seu interesse em ser voluntário, logo mais entraremos em contato para maiores esclarecimentos. \nAté a próxima!"
+
+  utter_collaboration:
+    - text: "Ficamos felizes com a sua ajuda! Como gostaria de colaborar conosco?"
+      quick_replies:
+        - title: Lar Temporário
+          payload: '/lar_temporario{{"informacao_usuario":"lar_temporario", "description_form":"Quero ser um lar temporario", "address_form": "---"}}'
+        - title: Voluntário
+          payload: '/voluntario{{"informacao_usuario":"voluntario", "description_form":"Quero ser um voluntario", "address_form": "---"}}'
+
+  utter_collaboration_lar_temporario:
+    - text: "Certo. Sua opção foi lar temporario. Nos informe seu endereço:"
+
+  utter_collaboration_contato:
+    - text: "Certo. Sua opção foi voluntário. Por favor, diga seu nome e um telefone para contato!"
+
+  #############################  Menu de INFORMAÇÕES GERAIS #############################################
+
+  utter_information:
+    - text: "Qual informação você gostaria de saber?"
+      quick_replies:
+        - title: Eventos
+          payload: /info_eventos
+        - title: Controle de animais
+          payload: /info_controle_animais
+        - title: Sobre a bicharada
+          payload: /info_contato_sobre_bicharada
+
+  utter_explain_eventos:
+    - text: |
+        Eventos previstos entre 25 e 29 de julho:
+        🔸 25/07 - Rifa solidária
+        🔸 26/07 - Feirinha de artesanato
+        🔸 27/07 - Vacinação day
+        🔸 28/07 - Exposição de animais para adoção
+        🔸 29/05 - Visitação para auxilo
+
+  utter_explain_sobre_bicharada:
+    - text: |
+        Nosso endereço:
+        📌 Rua Antonia dos Anjos, 452
+        Nosso contato:
+        ☎️ (53) 32282965
+        Nossas redes sociais:
+        📌 Facebook: @bicharada
+        📌 Instagran: @bicharada.furg
+        📌 Site: www.bicharada.furg.br 
+
+  utter_explain_controle_animais:
+    - text: |
+        Relatório mês de junho/2022:
+        🐶 Castração cachorros: 10
+        🐱 Castração de gatos: 05
+        💉 Vacinação de cachorros: 15
+        💉 Vacinação de gatos: 06
+        😍Total de cachorros resgatados: 05
+        😻 Total de gatos resgatados: 03
+
+  # Coletando nome e telefone do usuário
+  utter_ask_informacao_usuario:
+    - text: "Informe seu nome e telefone, por favor"
+
+  utter_ask_contact_form:
+    - text: "Informe seu nome e telefone, por favor"
+
+#####################################################################################################
+entities:
+  - type_option
+  - informacao_usuario
+  - description_form
+  - contact_form
+  - address_form
+  - description_escrita
+
+slots:
+  type_option:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: type_option
+
+  informacao_usuario:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: informacao_usuario
+
+  description_form:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: description_form
+
+  contact_form:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: contact_form
+
+  address_form:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: address_form
+
+  description_escrita:
+    type: text
+    initial_value: null
+    mappings:
+      - type: from_entity
+        entity: description_escrita
+
+actions:
+  - action_option
+  - action_email
+  - action_informacao
+  - action_escrita_email
+
+forms:
+  option_form:
+    required_slots:
+      - type_option
+
+  info_usuario_form:
+    required_slots:
+      - informacao_usuario
+     
+  description_form:
+    required_slots:
+      - description_form
+      - address_form
+      - contact_form
+
+  description_escrita:
+    required_slots:
+      - description_escrita
+
+  colaborador_escrita:
+    required_slots:
+      - description_form
+      - contact_form
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

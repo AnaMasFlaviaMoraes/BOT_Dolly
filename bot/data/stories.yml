@@ -1,0 +1,13 @@
+version: "3.1"
+
+stories:
+  - story: Quando o usuário diz olá.
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - action: option_form
+      - active_loop: option_form
+    
+      # Inserir comando para verificar se deseja mais alguma coisa
+      - slot_was_set:
+        - requested_slot: null
