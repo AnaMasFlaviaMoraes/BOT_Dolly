@@ -49,7 +49,7 @@ Outra funcionalidade também projetada é para quando o usuário tem interesse e
 Por fim, a última funcionalidade é informativa. Seu objetivo é repassar informações sobre próximos eventos que a Bicharada irá participar, contar um pouco sobre a história do grupo, repassar informações de contato e até mesmo mostrar quantos animais já foram ajudados. 
 
 ## Fluxograma operacional 
-![Fluxograma](https://raw.githubusercontent.com/EvertonLWF/sprint-5-pb-rg-pel/master/assets/images/fluxograma_sprint5.png?token=GHSAT0AAAAAABWLOMT7WWETSZCSJYL2BTS4YXEKK7Q)
+![Fluxograma](https://raw.githubusercontent.com/Compass-pb-rasa-2022-RG-Pel/aubotdolly/main/assets/images/fluxograma_sprint5.png)
 
 ## Okteto
 
@@ -153,16 +153,38 @@ Use o coletado secrete page-access-token no seu credentials.yml, e adicione um c
 6 - Insira o token de verificação que deve corresponder à verify entrada em seu arquivo credentials.yml.
 
 ## Exemplos de Funcionamento
-
+  
+### Adoção
+  
 ![adoção de um gato](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-07-28%2016-29-51.png?raw=true)
+  
+![adoção de um cão, com pergunta sobre o porte](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2016-14-33.png?raw=true)
+  
+### Doação
   
 ![doacão de ração](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-07-28%2016-16-42.png?raw=true)
   
 ![respostas para doacoes](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-07-28%2016-16-49.png?raw=true)
   
-!
+### Resgate
   
-! 
+![animal que precisa de resgate](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-14-51.png?raw=true)
+  
+![armazenando contato para resgate](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-16-04.png?raw=true)
+  
+### Voluntário
+  
+![cadastro de voluntarios](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-20-53.png?raw=true)
+  
+### Informações
+  
+![informações sobre a ONG](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-21-25.png?raw=true)
+  
+![uma das respostas automaticas de informações](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-24-03.png?raw=true)
+  
+### Continuar conversa ou sair    
+  
+![pergunta por uma nova questão](https://github.com/EvertonLWF/sprint-5-pb-rg-pel/blob/master/assets/images/Captura%20de%20tela%20de%202022-08-01%2015-13-21.png?raw=true) 
   
 ## Observações Gerais 
 
