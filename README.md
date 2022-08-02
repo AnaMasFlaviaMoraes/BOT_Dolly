@@ -26,7 +26,7 @@ A partir dessa premissa, a bicharada busca suprir primeiro a necessidade de alim
 
 O BOT Dolly possui cinco funcionalidades principais, são elas:
 
-* *Doação**
+**Doação**
 
 A Bicharada Universitária recebe muitas mensagens de pessoas que querem contribuir com seu trabalho, essas doações costumam ser em forma de ajuda financeira (envio de pix, dinheiro e/ou transferências bancárias), doação de rações, remédios, doação de roupas, agasalhos ou objetos que possam ser usados no brechó da Bicharada.
 
