@@ -49,7 +49,7 @@ Outra funcionalidade também projetada é para quando o usuário tem interesse e
 Por fim, a última funcionalidade é informativa. Seu objetivo é repassar informações sobre próximos eventos que a Bicharada irá participar, contar um pouco sobre a história do grupo, repassar informações de contato e até mesmo mostrar quantos animais já foram ajudados. 
 
 ## Fluxograma operacional 
-![Fluxograma](https://raw.githubusercontent.com/EvertonLWF/sprint-5-pb-rg-pel/master/assets/images/Fluxograma_final.png?token=GHSAT0AAAAAABWUYXPY7T53HJIBFVOPKYZSYXMJISA)
+![Fluxograma](https://raw.githubusercontent.com/Compass-pb-rasa-2022-RG-Pel/aubotdolly/main/assets/images/Fluxograma_final.png)
 
 ## Okteto
 
