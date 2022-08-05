@@ -73,6 +73,11 @@ rules:
   - rule: Na adoção, quando o usuário digitar cachorro
     steps:
       - intent: type_dog
+      - action: utter_porte_type
+
+  - rule: Na adoção, quando o usuário informar o porte do cachorro
+    steps:
+      - intent: porte
       - action: colaborador_escrita
       - active_loop: colaborador_escrita
 
@@ -81,7 +86,7 @@ rules:
       - intent: type_cat
       - action: colaborador_escrita
       - active_loop: colaborador_escrita
-
+      
   ##### fluxo de Resgate #####
 
   - rule: Quando o usuário escolher a opção 'resgate'

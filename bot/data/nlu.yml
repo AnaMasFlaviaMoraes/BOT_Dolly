@@ -143,29 +143,17 @@ nlu:
     
 - intent: inform_option
   examples: |
-    - opção 1(type_option)
-    - Opção 2(type_option)
-    - quero acessar opcao 3(type_option)
-    - 4(type_option)
-    - ver opcao 5(type_option)
-    - Quero fazer uma doação(type_option)
-    - quero ser colaborador(type_option)
-    - Desejo ser um colaborador(type_option)
-    - como faço para ajudar(type_option)?
-    - um animal precisa de resgate(type_option)
-    - preciso de ajuda(type_option)
-    - gostaria de saber mais sobre(type_option) a Bicharada
-    - O que a Bicharada faz(type_option)?
-    - adotar(type_option)
-    - adoção(type_option)
-    - quero adotar(type_option) 
-    - como eu adoto(option? 
-    - como faço para adotar(type_option) um animal? 
-    - posso adotar(type_option) um pet ?
-    - Como adotar(type_option) um cão
-    - quero um cachorro
-    - quero um gato
-    - desejo adotar(type_option) um gatinho
+    - [quero adotar um pet](type_option)
+    - [quero fazer a adoção de um animal](type_option)
+    - [quero fazer uma doação](type_option)
+    - [quero ajudar no pix day](type_option)
+    - [quero ser um colaborador](type_option)
+    - [quero ser um lar temporário](type_option)
+    - [desejo fazer uma doação](type_option)
+    - [quero adotar um doguinho](type_option)
+    - [quero adotar um cachorro](type_option)
+    - [quero adotar uma gatinha](type_option)
+    - [quero adotar um gato](type_option)
 
 ###################################### Resgate #####################################################
 
@@ -231,6 +219,9 @@ nlu:
     - [Estou com essa cachorrinha, estava assustada na rua com vários cachorros na volta.](description_form)
     - [Foi encontrada com a perna machucada e tomada de bicheiras](description_form)
     - [esse cãozinho foi encontrado no campus. Pode ter sido abandonado ou está perdido.](description_form)
+    - [essa gatinha está perdida](description_form)
+    - [esse cachorrinho se perdeu aqui nos arredores do cassino](description_form)
+    - [esses filhotinhos foram encontrados abandonados aqui no terreno](description_form)
 ################################### Doação #######################################################
 - intent: doacao
   examples: |

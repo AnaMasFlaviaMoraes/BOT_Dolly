@@ -33,6 +33,7 @@ intents:
   # Menu de Adoções
   - type_cat
   - type_dog
+  - porte
   - cat_info
   - dog_info
   # Menu de Informações
@@ -163,7 +164,17 @@ responses:
         - title: Gato
           payload: '/type_cat{{"description_form":"Adoção de Gatos"}}'
         - title: Cachorro
-          payload: '/type_dog{{"description_form":"Adoção de Cachorros"}}'
+          payload: '/type_dog'
+
+  utter_porte_type:
+    - text: " Qual porte de doguinhos, você procura?"
+      quick_replies: # note the button limit still applies here
+        - title: Porte Grande
+          payload: '/porte{{"description_form":"Adoção de Cachorros -  Porte Grande"}}'
+        - title:  Porte Médio
+          payload: '/porte{{"description_form":"Adoção de Cachorros -  Porte Médio"}}'
+        - title:  Porte Pequeno
+          payload: '/porte{{"description_form":"Adoção de Cachorros -  Porte Pequeno"}}'
 
   utter_esclarece_adocao:
     - text: "Vou passar suas informações para o(a) responsável pela adoção. \n em breve entraremos em contato, Obrigado por colaborar!"

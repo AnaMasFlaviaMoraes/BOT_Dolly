@@ -12,8 +12,6 @@ services:
       - 5005:5056
     depends_on:
       - "server"
-    volumes:
-      - ./bot:/app
     env_file:
       - ./bot/.env
     command:
@@ -26,8 +24,7 @@ services:
       - --model
       - models
       - --credentials
-      - credentials.yml
-
+      - credentials.yml 
   server:
     build:
       context: .

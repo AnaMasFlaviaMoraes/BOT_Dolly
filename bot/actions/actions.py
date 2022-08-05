@@ -30,6 +30,38 @@ class ActionOption(Action):
 
         option = tracker.get_slot("type_option")
         print(option)
+        if option != 'doacao' and option != 'adocao' and option != 'resgate' and option != 'colaborador' and option != 'informacoes':
+            doacao = ['doacao','DOACAO','doação','DOAÇÃO','Doação','doações','DOAÇÕES','ração','remedio','roupas',
+            'brechó','ajudar','pix day','vakinha','RAÇÃO','REMEDIO','ROUPAS','BRECHÓ','AJUDAR','PIX DAY',
+            'VAKINHA','remédios','REMÉDIOS','Medicamentos','doar','doa','Ração','camisas','calças','cobertas',
+            'agasalhos','MEDICAMENTOS','DOAR','DOA','RAÇÃO','CAMISAS','CALÇAS','COBERTAS','AGASALHOS']
+
+            voluntario = ['voluntario','voluntário','Voluntário','voluntária','voluntaria','Voluntária','lar temporário','Lar temporário','Lar Temporário','lar solidário','lar temporario','lar solidario','voluntariado','VOLUNTARIO','VOLUNTÁRIO','VOLUNTÁRIO','VOLUNTÁRIA','VOLUNTARIA','VOLUNTÁRIA','LAR TEMPORÁRIO','LAR TEMPORÁRIO','LAR TEMPORÁRIO','LAR SOLIDÁRIO','LAR TEMPORARIO','LAR SOLIDARIO','VOLUNTARIADO']
+            lar_temp = ['lar','LAR','Lar','Lartemporario']
+            resgate = ['atropelado','perdido','mal','desnutridos','abandonados','judiados','sangrando','quebrada','quebrado','bicheira','resgate','ATROPELADO','PERDIDO','MAL','DESNUTRIDOS','ABANDONADOS','JUDIADOS','SANGRANDO','QUEBRADA','QUEBRADO','BICHEIRA','RESGATE']
+            adocao = ['adotar','adoção','adocao','Adotar','Adoção','Adocao','ADOTAR','ADOÇÃO','ADOCAO','ADOTAR','ADOÇÃO','ADOCAO','porte','Porte','PORTE','Pequeno','pequeno','PEQUENO','Médio','Medio','medio','médio','MÉDIO','mediano','pequenininho','grandão','Grande','grande','GRANDE','p','m','g','P','M','G']
+            informacao = ['informação','informações','informacao','informacoes']
+
+            temp= option.split(' ')
+            for x in temp:
+                if x in doacao:
+                    option = 'doacao'
+                    break
+                if x in voluntario:
+                    option = 'voluntario'
+                    break
+                if x in lar_temp:
+                    option = 'lar_temporario'
+                    break
+                if x in adocao:
+                    option = 'adocao'
+                    break
+                if x in resgate:
+                    option = 'resgate'
+                    break
+                if x in informacao:
+                    option = 'informacoes'
+                    break
 
         if option == 'doacao':
             dispatcher.utter_message(response="utter_type_donation")
@@ -274,7 +306,6 @@ def sendEmail(assunto, descricao, contato, endereco):
     ## Lendo arquivo .env
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')       
     load_dotenv(dotenv_path)
-
     PSK = os.getenv("PSK")
 
     message["Subject"] = assunto
@@ -288,13 +319,12 @@ def sendEmail(assunto, descricao, contato, endereco):
     # The email client will try to render the last part first
     message.attach(part1)
 
-    # Create secure connection with server and send email
+     #Create secure connection with server and send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(From, PSK)
         server.sendmail(
-            From, To, message.as_string()
+           From, To, message.as_string()
         )
-    
-    print("Modelo", models[assunto])
 
+    print(models[assunto])

@@ -49,7 +49,7 @@ Outra funcionalidade também projetada é para quando o usuário tem interesse e
 Por fim, a última funcionalidade é informativa. Seu objetivo é repassar informações sobre próximos eventos que a Bicharada irá participar, contar um pouco sobre a história do grupo, repassar informações de contato e até mesmo mostrar quantos animais já foram ajudados. 
 
 ## Fluxograma operacional 
-![Fluxograma](https://raw.githubusercontent.com/Compass-pb-rasa-2022-RG-Pel/aubotdolly/main/assets/images/fluxograma_sprint5.png)
+![Fluxograma](https://raw.githubusercontent.com/EvertonLWF/sprint-5-pb-rg-pel/master/assets/images/Fluxograma_final.png?token=GHSAT0AAAAAABWUYXPY7T53HJIBFVOPKYZSYXMJISA)
 
 ## Okteto
 
@@ -71,8 +71,6 @@ services:
       - 5005:5056
     depends_on:
       - "server"
-    volumes:
-      - ./bot:/app
     command:
       - run
       - --enable-api
@@ -118,8 +116,10 @@ USER root
 # Instala as dependências
 RUN pip install -r requirements-actions.txt
 
-# Copia as actions para o workdir
-COPY bot/actions /app/actions
+WORKDIR /app
+
+ # Copia as actions para o workdir
+COPY ./bot/ /app
 
 # Seguindo as boas práticas não executo o código com user root
 USER 1001
@@ -205,7 +205,34 @@ O Messenger do Facebook foi escolhido por necessidade da ONG, uma vez que eles n
 
 * O BOT Dolly faz o envio de email em alguns momentos da conversa para notificar alguém da Bicharada de que algo precisa da atenção deles. Na configuração dos envios dos email pelo Gmail, tivemos um barramento do próprio Google. Desde  30 de maio de 2022, o Google não autoriza mais o uso de apps ou dispositivos de terceiros que exigem apenas nome de usuário e senha para fazer login na Conta do Google, sendo assim, mesmo que nosso app estivesse devidamente configurado, a Google impedia o acesso ao gmail criado. Para contornar essa questão, seguindo orientação do youtuber _Lira da Hastag_, criamos uma senha de verificação dentro da conta do Google do bot, e nas configurações do envio nas actions, fornecemos essa senha para que o Google liberasse o acesso ao nosso app.
 
-* Algumas vezes nosso bot simplesmente, sem ninguém ter modificado o código, parava de funcionar sem nenhuma explicação. Notamos que esse problema acontecia quando fazíamos o _git clone_ de alguma _branch_. Tivemos que fazer o download da branch e abrir diretamente no VS Code.  
+* Algumas vezes nosso bot simplesmente, sem ninguém ter modificado o código, parava de funcionar sem nenhuma explicação. Notamos que esse problema acontecia quando fazíamos o _git clone_ de alguma _branch_. Tivemos que fazer o download da branch e abrir diretamente no VS Code. 
+
+* Para proteção os tokens que o Facebook nos disponibilizou, optamos em usar arquivos _.env_ e chamá-los nas _credentials.yml_. O primeiro problema encontrado ao adicionar os arquivos .env é que ao tentar executar no terminal de comando e no Okteto, obtinhamos o erro: 
+  
+_RasaException: Error when trying to expand the environment variables in '${VERIFY}'. Please make sure to also set these environment variables: '['${VERIFY}']'_
+  
+Para contornar essa situação adicionamos no _docker-compose_ o seguinte componente:
+```sh
+  env_file:
+      - ./bot/.env
+```
+Outro ponto é que concluímos que se tentarmos executar o BOT fora do Docker esse problema aconteceria sempre, pois as variáveis de ambiente não são setadas automaticamente, ou seja, só o fato de existir um arquivo .env definindo essas variáveis e de referenciá-las no _credentials.yml_ não garante o funcionamento, porque elas não foram definidas de fato no sistema. 
+
+Quando executamos o código no Docker, o problema se modifiou para um problema de acesso/permissão a pasta _models_:
+_UserWarning: No valid model found at models!_
+
+Para solucionar esse erro retiramos do arquivo _docker-compose_ a seguinte linha de comando:
+```sh
+ volumes:
+      - ./bot:/app
+```
+E adicionamos no arquivo de Rasa.dockerfile os seguintes comandos:
+```sh
+ WORKDIR /app
+ 
+ COPY ./bot/ /app
+```
+Com essas modificações conseguimos executar o BOT dentro do Docker com os arquivos .env
 
 ## Próximos passos 
 
